@@ -3,7 +3,6 @@ import multer from "multer";
 import cors from "cors";
 import fs from 'fs';
 
-
 import findChattiest from "./findChattiest.js";
 
 const app = express();
@@ -43,3 +42,5 @@ const port = process.env.PORT || 4000;
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
+
+export { app };
