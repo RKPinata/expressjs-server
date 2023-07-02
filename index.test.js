@@ -52,7 +52,7 @@ describe('Express Server', () => {
     // Create a mock file
     const file = {
       fieldname: 'files',
-      originalname: 'test.txt',
+      originalname: 'test2.txt',
       encoding: '7bit',
       mimetype: 'text/plain',
       destination: 'uploads/',
@@ -102,7 +102,7 @@ describe('Express Server', () => {
     // Create a mock file
     const file = {
       fieldname: 'files',
-      originalname: 'test.txt',
+      originalname: 'test3.txt',
       encoding: '7bit',
       mimetype: 'text/plain',
       destination: 'uploads/',
@@ -126,7 +126,7 @@ describe('Express Server', () => {
         'files',
         Buffer.from(`
         <user1> 123 123 51 5 1234 
-        <user2> 1234 4 2 12 
+        <user2> 1234 4 2 12
         123
         1223 1234
         123
