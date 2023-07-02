@@ -11,7 +11,7 @@ const upload = multer({ dest: "uploads/" }); // Specify the destination folder f
 app.use(cors()); // Enable CORS for all routes
 
 app.get("/", (req, res) => {
-  res.send("Welcome to your Express app 🚅");
+  res.send("File Uploader");
 });
 
 app.get("/json", (req, res) => {
@@ -22,15 +22,13 @@ app.post("/api/upload", upload.array("files"), (req, res) => {
   // Access the uploaded files via req.files
   console.log(req.files);
 
-  // Perform operations on the files
-  // For example, you can store them, process their content, etc.
   const uploadedFiles = req.files;
-  const chattiestUsers = findChattiest(uploadedFiles); // Use the findChattiest function
+  const chattiestUsers = findChattiest(uploadedFiles); 
 
-  // Delete the uploaded files
+  
   uploadedFiles.forEach((file) => {
     fs.unlinkSync(file.path);
-  });
+  }); // Delete the uploaded files
 
 
   res.json({ chattiestUsers });
